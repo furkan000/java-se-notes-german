@@ -339,14 +339,11 @@ Beispiel:
 - gleichen Methoden wie ArrayList
 - Listenelemente stehen in Verbindung zum jeweiligen Vorgänger bzw. Nachfolger
 - Elemente können schneller hinzugefügt und gelöscht werden 
-| *ArrayList*                                                                        | *LinkedList*                                                                         |
-| ---------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
-| Direkter Zugriff über Index möglich
-– get(int index)                               | Durchlaufen aller vorherigen Elemente notwendig
-– get(int index)                     |
-| Hinzufügen von Elementen im vorderen Bereich ist teuer
-– add(int index, E element) | Hinzufügen von Elementen im vorderen Bereich ist günstig
-– add(int index, E element) |
+
+| ArrayList | LinkedList |
+|-----------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------|
+| Direkter Zugriff über Index möglich<br />– get(int index) | Durchlaufen aller vorherigen Elemente notwendig<br />– get(int index) |
+| Hinzufügen von Elementen im vorderen Bereich ist teuer<br />– add(int index, E element) | Hinzufügen von Elementen im vorderen Bereich ist günstig<br />– add(int index, E element) |
 
 
 
@@ -508,18 +505,19 @@ Bsp.
 
 ## Reguläre Ausdrücke
 - Die matches-Methode von String kann für reguläre Ausdrücke benutzt werden
-    if (string.matches("01[0-9]{7}")) {...} 
-    //entspricht (0,1)*(0,...,9)^7
-    
-    "00|111|0000" //oder
-    "trolo(lo)*"
-    "trolo(lo)+" //"trolo(lo)(lo)*"
-    "You have (deleted )?the name" //d.h. deleted kann weggelassen werden
-    "1{2,}" //die "1" wird 2 bis n-mal wiederholt
-    
-    [145] //(1|4|5)
-    [2-36-9] //(2|3|6|7|8|9)
-    [a-c]* //(a,b,c)*
+		
+		if (string.matches("01[0-9]{7}")) {...} 
+		//entspricht (0,1)*(0,...,9)^7
+
+		"00|111|0000" //oder
+		"trolo(lo)*"
+		"trolo(lo)+" //"trolo(lo)(lo)*"
+		"You have (deleted )?the name" //d.h. deleted kann weggelassen werden
+		"1{2,}" //die "1" wird 2 bis n-mal wiederholt
+
+		[145] //(1|4|5)
+		[2-36-9] //(2|3|6|7|8|9)
+		[a-c]* //(a,b,c)*
 
 
 ## Enum
@@ -537,31 +535,30 @@ Bsp.
 
 
 - Enum können auch Felder und Methoden haben
+	    
+		public enum Month { 
+		january(31), 
+		...
+		december(31);
 
+		private final int days;
 
-    public enum Month { 
-        january(31), 
-        ...
-        december(31);
-        
-        private final int days;
-    
-    //Das Feld days muß initialisiert werden.
-    //Deswegen der Konstruktor
-    //Konstruktur ist private, weil wir nicht zusätzliche Monate einführen wollen
-    
-        private Month(int days) { 
-            this.days = days; 
-        }
-        
-    //Zugriffsmethode days() um Wert des days-Feldes zu bekommen
-        public int days() { 
-            return days; 
-        } 
-    }
-    
-    //Verwendung von days
-    System.out.println(Month.january.days());
+		//Das Feld days muß initialisiert werden.
+		//Deswegen der Konstruktor
+		//Konstruktur ist private, weil wir nicht zusätzliche Monate einführen wollen
+
+		private Month(int days) { 
+			this.days = days; 
+		}
+
+		//Zugriffsmethode days() um Wert des days-Feldes zu bekommen
+			public int days() { 
+				return days; 
+			} 
+		}
+
+		//Verwendung von days
+		System.out.println(Month.january.days());
 
 
 ## Case
@@ -601,8 +598,8 @@ Bsp.
 - Mit diesen werden innerhalb von Methoden Zusicherungen aufgestellt, um Vor- und Nachbedingungen sicherzustellen
 - Wenn die Bedingung nicht erfüllt wird, so wird keine Exception sondern ein Error geworfen, dieser kann nicht gecatched werden, da es sich um ein Programmierfehler handelt
 	
-	//assert AssertConditionExpression : MessageExpression;
-    assert x >= 0 && x < board.sizeX : "x-Wert ausserhalb des Spielbrettes";
+		//assert AssertConditionExpression : MessageExpression;
+		assert x >= 0 && x < board.sizeX : "x-Wert ausserhalb des Spielbrettes";
 
 
 ## ToDo

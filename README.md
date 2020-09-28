@@ -1,4 +1,4 @@
-# Java
+# Java SE
 
 ## Über
 Das sind meine Notizen als ich begonnen hatte Java zu lernen.

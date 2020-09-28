@@ -1,5 +1,10 @@
 # Java
 
+## Über
+Das sind meine Notizen als ich begonnen hatte Java zu lernen.
+
+&nbsp;
+
 ## Objekte
 
 Objekte erstellen:
